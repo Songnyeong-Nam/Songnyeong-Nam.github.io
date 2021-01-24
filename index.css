@@ -56,8 +56,14 @@ ul{
 .todo{
     grid-area: 5/2/6/4;
     display: flex;
-    justify-content: center;
-    padding-top: 1.0rem;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: .5rem;
+}
+.todo>span{
+    position: relative;
+    top: .5rem;
+    /* left: 1.0rem; */
 }
 .todo>div{
     width: 85%;
@@ -89,13 +95,13 @@ ul{
     color: white;
 }
 
-.todo>div>span{
+.todo>span{
     padding: .2rem .5rem 0.2rem .5rem;
-    /* border: 2px solid cadetblue; */
     position: relative;
     left: 0.5rem;
     bottom: 0.5rem;
-    background-color: rgba(48, 122, 122, 0.562);
+    background-color: rgba(48, 122, 122, 0.7);
+    z-index: 5;
 }
 .bgImage{
     position : absolute;
@@ -147,7 +153,16 @@ ul{
     font-size: 0.7rem;
     font-weight: bolder;
 }
-
+.fold{
+    margin-left: 0.3rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+.fold:hover, .rotate{
+    transform: rotate(180deg);
+}
 .display{
     display: flex;
     justify-content: center;
@@ -160,7 +175,6 @@ ul{
 }
 .round{
     border-radius: 10px;
-    
 }
 .none{
     display : none;

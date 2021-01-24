@@ -1,11 +1,14 @@
 const todoForm = document.getElementById('todoForm')
 const todoInput = todoForm.querySelector('input')
-const todoList = document.querySelector('.todoList')
-const finishedList = document.querySelector('.finishedList')
+const todoContainer = document.querySelector('.todo')
+const todoList = todoContainer.querySelector('.todoList')
+const finishedList = todoContainer.querySelector('.finishedList')
 const delAll = document.querySelector('.delAll')
+const fold = document.querySelector('.fold')
 
 const TODOS_LS = "todos"
 const FINISHED_LS = 'finished'
+let isOpen = true;
 let todos = [];
 let finished = [];
 
@@ -155,10 +158,22 @@ function loadTodos() {
     }
 }
 
+function handleFold() {
+   isOpen = !isOpen
+   if(!isOpen){
+       console.log(todoContainer)
+       fold.classList.add('rotate')
+       todoContainer.querySelector('div').classList.add('none')
+   } else{
+       fold.classList.remove('rotate')
+       todoContainer.querySelector('div').classList.remove('none')   }
+}
+
 function init() {
     loadTodos();
     todoForm.addEventListener('submit', handleSubmit)
     delAll.addEventListener('click', deleteAll)
+    fold.addEventListener('click',handleFold)
 }
 
 init();
