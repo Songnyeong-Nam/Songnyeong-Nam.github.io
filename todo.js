@@ -2,6 +2,7 @@ const todoForm = document.getElementById('todoForm')
 const todoInput = todoForm.querySelector('input')
 const todoList = document.querySelector('.todoList')
 const finishedList = document.querySelector('.finishedList')
+const delAll = document.querySelector('.delAll')
 
 const TODOS_LS = "todos"
 const FINISHED_LS = 'finished'
@@ -34,7 +35,6 @@ function addTodo(targetedId) {
     const targetedTodo = finished.filter(todo => {
         return todo.id === parseInt(targetedId.id)
     })
-    console.log(targetedId, targetedTodo)
     createTodo(targetedTodo[0].content)
     saveTodos()
 }
@@ -119,6 +119,17 @@ function createTodo(todo) {
     todos.push(todoObj);
     saveTodos();
 }
+function deleteAll() {
+    localStorage.removeItem(TODOS_LS)
+    localStorage.removeItem(FINISHED_LS)
+    while (todoList.hasChildNodes()) {
+        todoList.removeChild(todoList.firstChild);
+    }
+    while (finishedList.hasChildNodes()) {
+        finishedList.removeChild(finishedList.firstChild);
+    }
+
+}
 function handleSubmit(e) {
     e.preventDefault()
     const currentValue = todoInput.value;
@@ -126,9 +137,9 @@ function handleSubmit(e) {
         createTodo(currentValue);
         todoInput.value = '';
     }
-    else{
+    else {
         todoInput.classList.add('warning')
-        setTimeout(() => {todoInput.classList.remove('warning')},1000)
+        setTimeout(() => { todoInput.classList.remove('warning') }, 1000)
     }
 }
 function loadTodos() {
@@ -147,6 +158,7 @@ function loadTodos() {
 function init() {
     loadTodos();
     todoForm.addEventListener('submit', handleSubmit)
+    delAll.addEventListener('click', deleteAll)
 }
 
 init();

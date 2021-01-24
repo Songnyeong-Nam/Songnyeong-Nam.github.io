@@ -27,7 +27,6 @@ function getWeather(lat, long) {
     ).then((res) => {
         return res.json();
     }).then((json) => {
-        console.log(json)
         const sky = json.weather[0].description
         paintSkyIcon(sky)
         const temperature = json.main.temp;

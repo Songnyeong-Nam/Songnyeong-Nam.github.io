@@ -135,6 +135,18 @@ ul{
     color: white;
     animation: shake 0.5s;
 }
+.delAll{
+    background: transparent;
+    border: 1px solid rgba(231, 63, 97, 0.61);
+    width: 4.8rem;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    color: rgba(231, 63, 97, 0.61);
+    font-size: 0.7rem;
+    font-weight: bolder;
+}
 
 .display{
     display: flex;
