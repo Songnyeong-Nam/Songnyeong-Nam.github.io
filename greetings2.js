@@ -31,7 +31,8 @@ function greetUser(name){
 }
 
 function getGreeting(){
-    const time = new Date().getTime();
+    const time = new Date().getHours();
+    console.log(time)
     if(time>5 && time <= 11){
         return GREETING_LIST[0]
     } else if(time >= 12 && time <= 19){
