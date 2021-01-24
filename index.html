@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+    <link rel='stylesheet' href='index.css'>
+</head>
+
+<body class='display'>
+    <div class='wrapper glass round grid'>
+        <div class='date white'>date</div class='date'>
+        <div class="clockContainer display">
+            <h1>00:00</h1>
+        </div>
+        <div class='greetings display'>
+            <form id='jsform' class='form none'>
+                <input class='round' type="text" placeholder="What is your name?" />
+            </form>
+            <span id='jsGreetings' class='none'>Welcome user!</span>
+        </div>
+        <form id='todoForm' class='display'>
+            <input class='round' type='text' placeholder="Plan your day">
+        </form>
+        <div class='todo'>
+            <div class='glass round'>
+                <span class='round white'> Things to do </span>
+                <ul class='todoList'></ul>
+                <ul class='finishedList'></ul>
+            </div>
+
+
+        </div>
+        <div class='weather display'>
+            <span id='jsWeather'></span>
+        </div>
+    </div>
+    <script src="clock.js"></script>
+    <script src='greetings2.js'></script>
+    <script src='todo.js'></script>
+    <script src='background.js'></script>
+    <script src='weather.js'></script>
+</body>
+
+</html>
