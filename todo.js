@@ -3,6 +3,7 @@ const todoInput = todoForm.querySelector('input')
 const todoContainer = document.querySelector('.todo')
 const todoList = todoContainer.querySelector('.todoList')
 const finishedList = todoContainer.querySelector('.finishedList')
+const sendBtn = document.getElementById('jsSendBtn')
 const delAll = document.querySelector('.delAll')
 const fold = document.querySelector('.fold')
 
@@ -174,6 +175,7 @@ function init() {
     todoForm.addEventListener('submit', handleSubmit)
     delAll.addEventListener('click', deleteAll)
     fold.addEventListener('click',handleFold)
+    sendBtn.addEventListener('click',handleSubmit)
 }
 
 init();

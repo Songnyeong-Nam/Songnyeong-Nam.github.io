@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Chrome-SN</title>
     <link rel='stylesheet' href='index.css' />
     <link rel='icon' href='imgs/Sketch005.png' />
 </head>
 
-<body class='display'>
-    <div class='wrapper glass round grid'>
+<body>
+    <div class='wrapper glass grid'>
         <div class='date white'>date</div class='date'>
         <div class="clockContainer display">
             <h1>00:00</h1>
@@ -20,8 +21,11 @@
             </form>
             <span id='jsGreetings' class='none'>Welcome user!</span>
         </div>
-        <form id='todoForm' class='display'>
-            <input class='round' type='text' placeholder="Plan your day">
+        <form id='todoForm'>
+            <div class='display'>
+                <input class='round' type='text' placeholder="Plan your day" />
+                <img id='jsSendBtn' src='imgs/arrow-right.png' />
+            </div>
         </form>
         <div class='todo'>
             <span class='round white'> Things to do
